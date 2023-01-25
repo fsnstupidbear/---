@@ -31,13 +31,13 @@ double SA(int var) {
     double difference = func(x);
     while (T > eps) {
         double dx = -1;
-        while (dx < 0) dx = x + ((double)(rand() % (var)) * 2 - (var)) * T;
+        while (dx < 0) dx = x + ((double)(sprng() % (var)) * 2 - (var)) * T;
         double df = func(dx);
         if (df < difference) {
             x = dx;
             difference = df;
         }
-        else if (exp((difference - df) / T) * (var) > rand() % (var)) {
+        else if (exp((difference - df) / T) * (var) > sprng() % (var)) {
             x = dx;
             difference = df;
         }
