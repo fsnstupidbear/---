@@ -2,6 +2,7 @@
 #include "omp.h"
 #include "math.h"
 #include "stdlib.h"
+#include "sprng.h"
 
 //当前线程号
 int rank;
