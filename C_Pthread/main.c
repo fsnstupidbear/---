@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "pthread.h"
 #include<sys/time.h>
+#include "sprng.h"
 
 //n,求解根号下n的近似值
 //如果x平方减n的绝对值越小，说明x越接近根号n的真实值
