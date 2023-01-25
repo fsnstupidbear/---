@@ -33,12 +33,12 @@ void *SA(int *var){
     double difference = func(x);
     while (T > eps){
         double dx = -1;
-        while (dx < 0) dx = x + ((double)(rand()%(*var)) * 2 - (*var)) * T;// NOLINT(cert-msc30-c, cert-msc50-cpp)
+        while (dx < 0) dx = x + ((double)(sprng()%(*var)) * 2 - (*var)) * T;
         double df = func(dx);
         if(df <difference){
             x = dx;
             difference = df;
-        } else if(exp((difference - df) / T) * (*var) > (double)(rand()%(*var))){
+        } else if(exp((difference - df) / T) * (*var) > (double)(sprng()%(*var))){
             x = dx;
             difference = df;
         }
