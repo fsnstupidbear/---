@@ -44,12 +44,12 @@ def SA(var):
     while T > eps:
         dx = -1;
         while dx < 0:
-            dx = x + ((random.randint(0, 30000) % var) * 2 - var) * T;
+            dx = x + ((sprng(0, 30000) % var) * 2 - var) * T;
         df = func(dx);
         if df < difference:
             x = dx;
             difference = df;
-        elif exp((difference - df) / T) * var > random.randint(0, 30000) % var:
+        elif exp((difference - df) / T) * var > sprng(0, 30000) % var:
             x = dx;
             difference = df;
         T *= dT;
